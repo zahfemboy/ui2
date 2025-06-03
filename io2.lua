@@ -58,7 +58,16 @@ draggable(menu.bg)
 local tabholder = menu.bg.bg.bg.bg.main.group
 local tabviewer = menu.bg.bg.bg.bg.tabbuttons
 
-
+inputService.InputEnded:Connect(function(key)
+    if key.KeyCode == Enum.KeyCode.End then
+        menu.Enabled = not menu.Enabled
+        library.scrolling = false
+        library.colorpicking = false
+        for i,v in next, library.toInvis do
+            v.Visible = false
+        end
+    end
+end)
 
 local keyNames = {
     [Enum.KeyCode.LeftAlt] = 'LALT';
