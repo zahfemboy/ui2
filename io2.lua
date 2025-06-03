@@ -190,7 +190,6 @@ function library:addTab(name)
         backframe.BorderSizePixel = 0
         backframe.Position = UDim2.new(0, 10, 0, -2)
         
-        print(title.TextBounds.X)
         if title.TextBounds.X then
             backframe.Size = UDim2.new(0, 13 + title.TextBounds.X, 0, 3)
         else
